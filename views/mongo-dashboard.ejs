@@ -1,0 +1,90 @@
+
+<html lang="en">
+<head>
+  <title>Mongo-Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+     $("document").ready(function()
+    {
+      var pageURL = document.location.origin;
+
+
+          /* ----simple ajax without file upload feature------
+
+           $('#regbtn').click(function()
+          {
+          //alert(pageURL);
+          var name=$('#name').val();
+          var email=$('#email').val();
+          var pwd=$('#pwd').val();
+
+          var data = {};
+          data.name = name;
+          data.email = email;
+
+          $.ajax({
+          type: 'POST',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+                  url: 'http://127.0.0.1:3000/quick_register',            
+                  success: function(data) {
+                      console.log('success');
+                      console.log(JSON.stringify(data));
+                  }
+              });
+
+          });
+         -------------------------------------------------- */
+
+         //---------file upload ajax------------------------
+      //   $("form").on('submit',(function(e) {
+      //   e.preventDefault();
+      //   $.ajax({
+      //     url: pageURL+"/quick_register",
+      //     type: "POST",
+      //     data:  new FormData(this),
+      //     contentType: false,
+      //     cache: false,
+      //     processData:false,
+      //     success: function(data)
+      //     {
+      //       alert(data);
+
+      //     },
+      //     error: function() 
+      //     {
+
+      //     }           
+      //   });
+      // }));
+});
+
+  </script>
+</head>
+<body>
+<br>
+<div class="container">
+<div class="col-md-3"></div>
+<div class="col-md-5" style="background:blanchedalmond;">
+  <h2> Welcome </h2>
+  <div class="response">
+  <% if (locals.email) { %>
+    <h4><%= email %></h4>
+   
+    <%  } %>
+  </div>
+  
+<form action="/mongo_logout" method="get" enctype="multipart/form-data">
+
+  <button type="submit" class="btn btn-primary">Logout</button>
+  </form>
+</div>
+<div class="col-md-4"></div>
+</div>
+
+</body>
+</html>

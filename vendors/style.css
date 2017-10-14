@@ -1,0 +1,106 @@
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.panel-body
+{
+    overflow-y: scroll;
+    height: 450px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+.panel-body ul {
+    width: 100%;
+} 
+.panel-body ul .right {
+    width: 100%;
+    float: right;
+}
+.panel-body ul .left {
+    width: 100%;
+    float: left;
+}
+
+.panel-body ul .right .chat-body p {
+    text-align: right;
+}
+.panel-body ul li span.cricle_info {
+    font-size: 20px;
+    display: inline-block;
+    border: 1px solid #ed3f1c;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 4px;
+    background-color:#ed3f1c    ;
+    color:#fff;
+    font-weight: 100;
+}
+.panel-body ul li span.cricle_info2 {
+    font-size: 20px;
+    display: inline-block;
+    border: 1px solid #306ef4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 4px;
+    background-color:#306ef4;
+    color:#fff;
+    font-weight: 100;
+}
+.panel-footer .input-group span button{
+    background: #374b51 !important;
+    border: 1px solid #374b51;
+    color:#fff;
+    
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dashboard</title>
+
+    <!-- Bootstrap -->
+
+    <link href="public/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="public/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="public/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="public/iCheck/skins/flat/green.css" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="public/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <!--<link href="public/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>-->
+    <!-- bootstrap-daterangepicker -->
+    <link href="public/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="public/build/css/custom.min.css" rel="stylesheet">
+    
+         <link rel="stylesheet" type="text/css" href="public/style.css">
+         <link href="public/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+          <link href="public/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+          <link href="public/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+          <link href="public/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+          <link href="public/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+          <link href="public/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="/dashboard" class="site_title"><i class="fa fa-paw"></i> <span>Esferasoft</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="public/upload/<%= myfile %>" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2><%= name %> [<%=role %>]</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+               <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a href="/dashboard"><i class="fa fa-home"></i> Dashboard </a></li>
+                  <li><a href="/create_post"><i class="fa fa-file-text"></i> Create Post </a></li>
+                  
+                  <% if(locals.role=='admin'){ %>
+                   <!--<li><a href="/list_users"><i class="fa fa-user"></i> List User </a></li>-->
+                  <% }%>
+                
+                  
+                 <!-- <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="form.html">General Form</a></li>
+                      <li><a href="form_advanced.html">Advanced Components</a></li>
+                      <li><a href="form_validation.html">Form Validation</a></li>
+                      <li><a href="form_wizards.html">Form Wizard</a></li>
+                      <li><a href="form_upload.html">Form Upload</a></li>
+                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                    </ul>
+                  </li>-->
+                
+                </ul>
+              </div>
+              <!--<div class="menu_section">
+                <h3>Live On</h3>
+                <ul class="nav side-menu">
+                <li><a href=""><i class="fa fa-wechat"></i>P2P CHAT</a></li>
+                
+                </ul>
+              </div>-->
+
+            </div>
+
+             </div>
+        </div>
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="public/upload/<%= myfile %>" alt=""> <%= email %>
+                  
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li><a href="/change_pwd"> Change Password</a></li>
+                  <!-- <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>-->          
+                    <li><a href="/mongo_logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>

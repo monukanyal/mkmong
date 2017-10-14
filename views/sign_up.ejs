@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+  <title>Registration form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+     $("document").ready(function()
+    {
+
+        var pageURL = document.location.origin;
+
+
+         //---------file upload ajax------------------------
+        $("form").on('submit',(function(e) {
+        e.preventDefault();
+       // $("#targetLayer").html("<img src='mkloader.gif' style='height:100px;width:auto'>wait...");
+        $.ajax({
+          url: pageURL+"/quick_register",
+          type: "POST",
+          data:  new FormData(this),
+          contentType: false,
+          cache: false,
+          processData:false,
+          success: function(data)
+          {
+            alert(data);
+            window.open(pageURL,'_self');
+            //$("#targetLayer").html(data);
+          },
+          error: function() 
+          {
+
+          }           
+        });
+      }));
+
+      });
+
+  </script>
+</head>
+<body>
+
+<div class="container">
+<div class="col-md-3"></div>
+<div class="col-md-5">
+  <h2 style="background: bisque;text-align: center;">Registration Form</h2>
+
+  <form  method="post" enctype="multipart/form-data">
+  <div class="form-group">
+      <label for="email">Name*:</label>
+      <input type="text" class="form-control" name="name" placeholder="Enter name" id='name' value="" required="">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" placeholder="Enter email" name="email"  id='email' value="" required="">
+    </div>
+     <div class="form-group">
+      <label for="pic">profile pic:</label>
+      <input type="file" class="form-control" name="myfile" value="" id='myfile' required="">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" placeholder="Enter password" name="pwd" id='pwd' value="" required="">
+    </div>
+    
+    <button type="submit" class="btn btn-success" id="regbtn">Register</button>&nbsp;<a href="/" class="btn btn-primary" style="float: right">Go Back</a>
+  </form>
+</div>
+<div class="col-md-4">
+
+</div>
+
+</div>
+
+</body>
+</html>

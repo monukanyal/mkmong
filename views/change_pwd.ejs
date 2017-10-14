@@ -1,0 +1,74 @@
+ <%- include('header'); %>
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3"> </div>
+            <div class="col-md-5">
+               <h3>Create New Password</h3>
+              <form  method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                  <label for="pwd">Old Password:</label>
+                  <input type="password" class="form-control" placeholder="Enter password" name="oldpwd" id='oldpwd' value="" required="">
+                </div>
+                  <div class="form-group">
+                  <label for="pwd">New Password:</label>
+                  <input type="password" class="form-control" placeholder="Enter password" name="newpwd" id='newpwd' value="" required="">
+                </div>
+                   <div class="form-group">
+                  <label for="pwd">Confirm Password:</label>
+                  <input type="password" class="form-control" placeholder="Enter password" name="confpwd" id='confpwd' value="" required="">
+                </div>
+                <div id="errmsg"></div>
+                <input type="hidden" name="userid" value="<%= userid %>">
+                <button type="submit" class="btn btn-success" id="regbtn">Update</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+ <%- include('footer'); %>
+  <script type="text/javascript">
+   $("document").ready(function(){
+     var pageURL = document.location.origin;
+         $("form").on('submit',(function(e) {
+         e.preventDefault();
+
+        if($('#newpwd').val()==$("#confpwd").val())
+        {
+          $.ajax({
+            url: pageURL+"/quick_change_pwd",
+            type: "POST",
+            data:  new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(data)
+            {
+
+              if(data=='updated'){
+              alert(data);
+              window.open(pageURL+'/dashboard','_self');
+              }
+              else
+              {
+                 alert(data);   
+              }
+            },
+            error: function() 
+            {
+
+            }           
+          });
+      }
+      else
+      {
+        $("#errmsg").html('<p style="color:crimson">Confirm Password should be same as New Password!!</p>');
+      }
+
+      }));
+
+
+   });
+
+ </script>
